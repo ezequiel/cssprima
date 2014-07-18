@@ -1,0 +1,33 @@
+{
+    "name": "cssprima",
+    "description": "The most standards compliant CSS parser.",
+    "author": "Ezequiel Rodriguez <ezequiel@yahoo.com>",
+    "version": "0.1.0",
+    "keywords": ["css", "parse", "tokenize", "syntax"],
+    "homepage": "https://github.com/ezequiel/cssprima",
+    "bugs": "https://github.com/ezequiel/cssprima/issues",
+    "license": {
+        "type": "MIT",
+        "url": "https://raw.githubusercontent.com/ezequiel/cssprima/master/LICENSE"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ezequiel/cssprima.git"
+    },
+    "main": "lib/Main.js",
+    "devDependencies": {
+        "tap": "*",
+        "jslint": "*",
+        "watchify": "*",
+        "uglify-js": "*",
+        "browserify": "*"
+    },
+    "scripts": {
+        "lint": "jslint lib/**/*.js",
+        "test": "tap test/tap/*.js",
+        "dist": "npm run lint && npm run browserify && npm run uglify",
+        "uglify": "uglifyjs dist/cssprima.js -cmv > dist/cssprima-min.js",
+        "browserify": "browserify lib/Main.js -s cssprima > dist/cssprima.js",
+        "watchify": "watchify lib/Main.js -s cssprima -o dist/cssprima.js -dv"
+    }
+}
