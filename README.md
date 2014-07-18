@@ -14,7 +14,7 @@ npm i cssprima
 
 ### Examples
 
-##### Tokenize a selector.
+##### 1. Tokenize a selector.
 ```js
 > cssprima.tokenize('#headlines:nth-child(2n)');
 [ { type: 'Hash',
@@ -30,7 +30,7 @@ npm i cssprima
   { type: 'RightParen', value: ')' } ]
 ```
 
-##### Parse a rule.
+##### 2. Parse a rule.
 
 ```js
 > var rule = '.clearfix { clear: both; }';
@@ -56,6 +56,7 @@ undefined
 ```
 
 ##### Possible object types:
+##### 4. Possible object types:
 
 ```js
 > cssprima.Types
