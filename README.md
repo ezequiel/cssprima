@@ -55,7 +55,55 @@ undefined
         { type: 'Whitespace', value: ' ' } ] } }
 ```
 
-##### Possible object types:
+##### 3. Return a list containing a rule's declarations.
+
+```js
+// Define a rule.
+> var rule = '.item { color: aliceblue; background-color: #ccc }';
+
+// And then parse the rule.
+> var parsedRule = cssprima.parseRule(rule);
+{ type: 'QualifiedRule',
+  prelude:
+   [ { type: 'Delim', value: '.' },
+     { type: 'Identifier', value: 'item' },
+     { type: 'Whitespace', value: ' ' } ],
+  value: null,
+  block:
+   { type: 'SimpleBlock',
+     associatedToken: { type: 'LeftBrace' },
+     value:
+      [ [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object] ] } }
+
+// The rule's block value is a list of *component values*, a.k.a. parsed tokens.
+> var componentValues = parsedRule.block.value;
+
+// Finally, parse the above component values to produce a list of declarations.
+> var parsedDeclarations = cssprima.parseDeclarations(componentValues);
+[ { type: 'Declaration',
+    name: 'color',
+    value: [ { type: 'Whitespace', value: ' ' },
+             { type: 'Identifier', value: 'aliceblue' } ] },
+  { type: 'Declaration',
+    name: 'background-color',
+    value: [ { type: 'Whitespace', value: ' ' },
+             { type: 'Hash', typeFlag: 'id', value: 'ccc' },
+             { type: 'Whitespace', value: ' ' } ] } ]
+```
+
+You are in control of how much, or how little you wish to parse each particular piece.
+
 ##### 4. Possible object types:
 
 ```js
