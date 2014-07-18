@@ -87,6 +87,8 @@ undefined
 + parseComponentValues
 + parseCommaSeparatedComponentValues
 
+Each method may be invoked with a string, or a list of *component values*, a.k.a. already parsed tokens (see example #3 for clarification).
+
 ----------------------------
 #### Testing
 
