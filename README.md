@@ -1,5 +1,7 @@
 ### cssprima - *The* most standards compliant CSS parser, written in JavaScript.
 
+### Goals
+
 This project is intended to be a reference implementation to the latest *Editor's Draft* of the  [CSS Syntax Level 3](http://dev.w3.org/csswg/css-syntax/) specification. As this edition of the specification evolves, so will the implementation.
 
 The code attempts to follow the specification verbatim, with the least amount of code additions possible.
