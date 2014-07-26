@@ -9,6 +9,7 @@ The code attempts to follow the specification verbatim, with the least amount of
 
 ```js
 npm i cssprima
+var cssprima = require('cssprima');
 ```
 ----------------------------
 
